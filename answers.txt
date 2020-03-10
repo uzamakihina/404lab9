@@ -1,0 +1,35 @@
+Q 1.
+The default authentication scheme uses HTTP Basic Authentication.
+signed against a user's username and password. It is managed under setting.py where 
+in REST_FRAMEWORK under 'DEFAULT_AUTHENTICATION_CLASSES' you set
+'rest_framework.authentication.BasicAuthentication' in one of its parameters.
+
+Q 2.
+
+when using -a or --auth it uses the default authentication scheme
+which requires a name and password.
+
+Q 3.
+Token based authentication requires the user to get and then provide 
+a token from the server. The token is then used to authenticate between the server and user.
+
+
+while 
+Session authentication saves the session ID in a cookie on the browser and is sent on every 
+request to the server while the server checks the Id and processes the request based on id. The
+server also stores the state of the user session. It is very taxing for the server to save the session state
+of every user.
+
+The authentication of tokens are better because it is encrypted while basic authentication 
+just sets the name and password into base 64 which is not good security and can easily be decoded.
+
+Q 4.
+
+WHen we try to login to bitbucket, bitbucket asks google for an authentication request for bitbucket to access 
+our google information. Google asks us fro the credentials so We enter our credentials and google grans bitbucket an authorization grant.
+Bit bucket then uses the authorization grant to get an access Token from google server.
+THe access token can be used from bitbucket to  ask for resources from google.
+
+
+
+
